@@ -11,7 +11,7 @@
 
 <head>
     <title></title>
-    <h:outputStylesheet library="Themes/Default Theme" name="LoginStyle"></h:outputStylesheet>
+    
 </head>
 
 <h:body>
@@ -21,6 +21,7 @@
 	</composite:interface>
 	
 	<composite:implementation>
+		<h:outputStylesheet library="Themes/Default Theme" name="LoginStyle" target="head"></h:outputStylesheet>
 		<h:form id="Login" action="j_security_check" method="post">
 			<h1>Login:</h1>
 			<h:outputLabel for="UsernameInput" value="Username:"></h:outputLabel>
@@ -31,7 +32,13 @@
 			<h:outputLabel for="PasswordInput" value="Password: "></h:outputLabel>
 			<h:inputSecret id="PasswordInput"></h:inputSecret>
 			<br/>
-			<div id="LoginButton"><h:commandLink id="LoginLink" value="Log In"></h:commandLink></div>
+			<div id="LoginButton">
+				<h:commandLink id="LoginLink" value="Log In" actionListener="{#LoginBean.login}">
+			</h:commandLink></div>
+			<h:message for="LoginLink"
+						id="loginError"
+						rendered="false">
+			</h:message>
 		</h:form>
 	</composite:implementation>
 	

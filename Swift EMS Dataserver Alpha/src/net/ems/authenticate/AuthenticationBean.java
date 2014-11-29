@@ -1,42 +1,35 @@
 package net.ems.authenticate; 
 
-import java.io.IOException;
-import java.security.Principal;
-
+import javax.faces.bean.ManagedBean;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
-import javax.inject.Named;
 import javax.servlet.RequestDispatcher;
 
 public class AuthenticationBean {
 
-	@Named
+	@ManagedBean(name="AuthenticationBean")
 	
 	//Variable Declaration
 	
 	private String username;
 	private String password;
-	private String originalURL;
-	private UserService userService;
+	private User user;
 	
 	public AuthenticationBean(){
 		
 	}
 	@PostConstruct
 	
-	public void init(){
-		ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
-		originalURL =(String) externalContext.getRequestMap().get(RequestDispatcher.FORWARD_REQUEST_URI);
-		
-		if(originalURL == null){
-			originalURL = externalContext.getRequestContextPath() + "index.xhtml";
-		}else{
-			String originalQuery = (String) externalContext.getRequestMap().get(RequestDispatcher.FORWARD_QUERY_STRING);
-			originalURL += "?" + originalQuery;
-		}
+	private void Init(){
+		th
 	}
 	
-	public void
-	
+	public void setUsername (String username){
+		this.username=username;
+	}
+	public String getUsername(){
+		return username;
+	}
+	public void setPÅasswo
 
 }
