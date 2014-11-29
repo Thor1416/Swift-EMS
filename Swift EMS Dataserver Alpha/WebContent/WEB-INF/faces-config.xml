@@ -10,10 +10,5 @@
 			<default-locale>en</default-locale>
 		</locale-config>
 	</application>
-	<managed-bean>
-		<managed-bean-name>loginBean</managed-bean-name>
-		<managed-bean-class>net.ems.authenticate.LoginBean</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
-	</managed-bean>
 
 </faces-config>

@@ -21,13 +21,16 @@
 	</composite:interface>
 	
 	<composite:implementation>
-		<h:form id="Login">
+		<h:form id="Login" action="j_security_check" method="post">
 			<h1>Login:</h1>
-			<p>Username:</p><h:inputText id="UsernameInput" 
-										title="Enter Username" 
-										value="#{loginbean.username}"
-										></h:inputText>
-			<p>Password:</p><h:inputSecret id="PasswordInput"></h:inputSecret>
+			<h:outputLabel for="UsernameInput" value="Username:"></h:outputLabel>
+			<h:inputText id="UsernameInput" 
+						 title="Enter Username">
+			</h:inputText>
+			<br/>
+			<h:outputLabel for="PasswordInput" value="Password: "></h:outputLabel>
+			<h:inputSecret id="PasswordInput"></h:inputSecret>
+			<br/>
 			<div id="LoginButton"><h:commandLink id="LoginLink" value="Log In"></h:commandLink></div>
 		</h:form>
 	</composite:implementation>
